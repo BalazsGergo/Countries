@@ -8,7 +8,7 @@ import { TextField } from "@mui/material";
 function App() {
   const [countries, setCountries] = useState([]);
   const [show, setShow] = useState(false);
-  const [sortBy, setSortBy] = useState("asc");
+  const [sortBy, setSortBy] = useState("Sort A-Z");
   const [searchedCountry, setSearchedCountry] = useState("");
 
   const changeShow = () => {
@@ -17,13 +17,13 @@ function App() {
 
   const handleSort = () => {
     const sortedCountries = [...countries].sort((a, b) => {
-      return sortBy === "asc"
+      return sortBy === "Sort A-Z"
         ? a.name.common.localeCompare(b.name.common)
         : b.name.common.localeCompare(a.name.common);
     });
 
     setCountries(sortedCountries);
-    setSortBy(sortBy === "asc" ? "desc" : "asc");
+    setSortBy(sortBy === "Sort A-Z" ? "Sort Z-A" : "Sort A-Z");
   };
 
   const handleInputChange = (e) => {
@@ -72,7 +72,7 @@ function App() {
           />
         ) : null}
 
-        {findCountry.length === 0 ? "No countries, please wait" : null}
+        {findCountry.length === 0 ? "Please wait while we load the content." : null}
       </div>
     </>
   );

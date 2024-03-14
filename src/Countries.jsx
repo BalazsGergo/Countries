@@ -37,7 +37,7 @@ export default function Countries({
             />
             <CardContent>
               <Button
-                variant="outlined"
+                variant="contained"
                 sx={{ fontSize: 10 }}
                 onClick={() => {
                   setCountryData(country.name.common), changeShow();

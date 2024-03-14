@@ -7,7 +7,6 @@ function CountryData({ country, deleteCountryData }) {
         <img src={country.flags.png} alt="country's flag" />
         <h4>Capital: {country.capital}</h4>
         <h5>Status: {country.status}</h5>
-        <p>Capital: {country.capital}</p>
         {country.borders ? (
           <p>Borders: {country.borders.join(", ")},</p>
         ) : (
